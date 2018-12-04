@@ -1,0 +1,13 @@
+.mode-layer{
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 2px solid #0074D9;
+    border-bottom: 2px solid #0074D9;
+    width: 100%;
+}

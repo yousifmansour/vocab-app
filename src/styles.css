@@ -1,0 +1,261 @@
+
+/* loader-1 START*/
+
+.loader{
+    background-color: white;
+    width: 15vh;
+    height: 15vh;
+    
+}
+
+.loader-2 div{
+    border-radius: 10px;
+}
+
+.loader-1{
+    border-radius: 100%;
+    animation: 3s loader-1-rotate linear infinite;
+}
+
+@keyframes loader-1-rotate{
+    0%{
+        margin-top: 0px;
+        transform: rotate(0deg);
+        border-bottom: 2px solid snow;
+        border-right: 1px solid snow;
+    }
+    10%{
+        margin-top: 10px;
+    }
+    20%{
+        margin-top: 0px;
+    }
+    30%{
+        margin-top: 10px;
+    }
+    40%{
+        margin-top: 0px;
+    }
+    50%{
+        margin-top: 10px;
+        transform: rotate(600deg);
+        border-bottom: 8px solid lightseagreen;
+        border-right: 3px solid lightseagreen;
+    }
+    60%{
+        margin-top: 0px;
+    }
+    70%{
+        margin-top: 10px;
+    }
+    80%{
+        margin-top: 0px;
+        border-bottom: 8px solid lightseagreen;
+        border-right: 3px solid lightseagreen;
+    }
+    90%{
+        margin-top: 10px;
+    }
+    100%{
+        margin-top: 0px;
+        transform: rotate(1440deg);
+        border-bottom: 2px solid lightseagreen;
+        border-right: 1px solid lightseagreen;
+    }
+}
+
+/* loader-1 END */
+
+/* loader-2 START */
+.loader-2{
+    display:flex;
+    flex-direction: row;
+}
+
+.loader-2 div{
+    background-color: #0074D9;
+    margin: 4px;
+    flex-grow: 1; 
+}
+
+.loader-2 :first-child{
+    animation: 3s loader-2-item-fade linear infinite;
+    flex-grow: 1;
+}
+
+@keyframes loader-2-item-fade {
+    60%{
+        flex-grow:15;
+    }
+
+    100%{
+        flex-grow: 1;
+    }
+}
+
+/* loader-2 END */
+
+/* loader-3 START */
+.loader-3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    background-color: white;
+    animation: loader-3-zoom 3s linear infinite;
+    border-radius: 10%;
+    padding: 2px;
+}
+
+.loader-3 .loader-item{
+    border: 1px solid rgb(175, 131, 64);
+    position: relative;
+    flex-basis: 50%;
+    margin: 2%;
+    background-color: blanchedalmond;
+    border-radius: 10%;  
+}
+
+.loader-3 .loader-3-first-row{
+    flex: 1 1 10%;
+    display: flex;
+}
+
+.loader-3 .loader-3-center-row{
+    display: flex;
+    justify-content: center;
+    flex: 1 1 10%
+}
+.loader-3 .loader-3-second-row{
+    display: flex;
+    flex: 1 1 10%;
+}
+
+
+.loader-3 .item-1{
+    animation: loader-3-change-color 2s linear infinite;
+}
+
+.loader-3 .item-2{
+    animation: loader-3-change-color 1s 0.5s linear infinite;
+}
+
+.loader-3 .item-3{
+    animation: loader-3-change-color 5s 1.5s linear infinite;
+}
+
+.loader-3 .item-4{
+    animation: loader-3-change-color 5s 1s linear infinite;
+}
+
+.loader-3 .item-5{
+    animation: loader-3-change-color 5s linear infinite;
+}
+
+.loader-3 .item-center{
+    animation: loader-3-change-color 1s linear infinite;
+}
+
+.loader-3 .item-6{
+    animation: loader-3-change-color 2s 0.5s linear infinite;
+}
+
+.loader-3 .item-7{
+    animation: loader-3-change-color 5s 1.5s linear infinite;
+}
+
+.loader-3 .item-8{
+    animation: loader-3-change-color 1s 1s linear infinite;
+}
+
+@keyframes loader-3-change-color{
+    20%{
+        transform: translateX(2px);
+        transform: translateY(2px);
+        background-color: burlywood;
+        flex-basis: 100%;
+    }
+}
+
+@keyframes loader-3-zoom{
+    50%{
+        transform: scale(1.05); 
+        padding: 5px;
+    }
+}
+/* loader-3 END */
+
+/* loader-4 START */
+
+.loader-4{
+    display: flex;
+    /* align-items: center; */
+    height: 2%;
+}
+
+.loader-4-line{
+    flex: 0 0 10%;
+    background-color: aqua;
+    animation: loader-4-length 3s linear infinite;
+    
+}
+
+@keyframes loader-4-length{
+    0%{
+        opacity: 0.5;
+    }
+    20%{
+        flex-basis: 100%; 
+        opacity: 1;
+    }
+    40%{
+        opacity: 0.5;
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.5;
+    }
+    100%{
+        flex-basis: 100%;   
+        opacity:1;
+      
+    }
+}
+
+
+/* loader-4 END */
+
+/* loader-5 START */
+.loader-5{
+    /* background-color: yellow;  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.loader-5 div{
+    flex-grow:1;
+    /* flex-basis: 50%; */
+    background-color: black;
+    margin: 4px; 
+    border-radius: 10%;
+    animation: loader-5-change-color 3s linear infinite alternate;
+}
+
+@keyframes loader-5-change-color{
+    25%{
+        background-color: #323232;
+        transform: rotate(-18deg);
+    }
+    50%{
+        background-color: black;
+    }
+    75%{
+        background-color: #323232;
+    }
+    100%{
+        transform: rotate(-15deg);
+    }
+}
+/* loader-5 END */

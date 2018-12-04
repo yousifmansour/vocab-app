@@ -1,0 +1,8 @@
+.random-word {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    animation: fade-in 0.15s ease-in-out forwards;
+    
+}

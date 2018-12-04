@@ -1,0 +1,30 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    animation: fade-in 0.15s ease-in-out forwards;
+}
+
+.input-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container form * {
+    margin: 10px;
+}
+
+.input-container input {
+    width: 75vw;
+    height: 7vh;
+    color: #0074D9;
+    background-color: white;
+    font-size: 30px;
+    text-align: center;
+}

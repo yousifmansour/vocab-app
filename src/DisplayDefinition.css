@@ -1,0 +1,19 @@
+.definition-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #0074D9;
+    color: #ffffff;
+    min-height: 45vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.definition-container * {
+    animation: fade-in 0.25s ease-in-out forwards, come-up 0.5s ease-in-out forwards;
+}
+
+.definition-container *::first-letter {
+    text-transform: capitalize;
+}
