@@ -10,10 +10,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      examples: [],
-      definition: '',
+      entries: [],
       currentWord: '',
-      currentMode: 'learn'
+      currentMode: 'learn',
+      status: ''
     }
     this.handleInput = this
       .handleInput
@@ -27,16 +27,15 @@ class App extends Component {
   handleInput(input) {
     if (input && input.length >= 1) {
       this.setState({
-        currentWord: '',
-        definition: '',
-        examples: []
+        entries: [],
+        currentWord: ''
       }, () => {
         let url = 'https://dictionaryapi.com/api/v3/references/collegiate/json/<WORD>?key=51ea8a10-' +
             '9f05-41e9-9adb-fff0f8785ac7';
         fetch(url.replace('<WORD>', input)).then((data) => data.json()).then((data) => {
           this.parseResult(data, input);
         }).catch((e) => {
-          this.setState({definition: 'not found', examples: [], currentWord: input});
+          this.setState({entries: [], currentWord: input, status: 'not found'});
         });
       });
 
@@ -46,13 +45,48 @@ class App extends Component {
   }
 
   parseResult(data, input) {
-    console.log((data));
-    
-    const definition = data[0].shortdef[0];
-    
-    // const examples = data.results[0].lexicalEntries[0].entries[0].senses[0].examples;
-    const examples = [];
-    this.setState({definition, examples, currentWord: input});
+    // console.clear(); console.log(data);
+
+    let entries = [];
+    let sensesArray;
+    let senses;
+
+    data.forEach((entry) => {
+      sensesArray = [];
+      let fl = entry.fl;
+      entry
+        .def
+        .forEach((def) => {
+          def
+            .sseq
+            .forEach((sseq) => {
+
+              senses = [];
+              sseq.forEach((sense) => {
+                if (sense[0] !== 'sense') 
+                  return;
+                
+                let dt = sense[1].dt;
+
+                dt.forEach((element) => {
+                  let text = '';
+                  let vis = '';
+                  if (element[0] === 'text') 
+                    text = element[1];
+                  if (element[0] === 'vis') 
+                    vis = element[1][0].t;
+                  senses.push({text, vis});
+                });
+                sensesArray.push(senses);
+              });
+            });
+        });
+
+      entries.push({sensesArray, fl});
+    });
+
+    // console.log('in state'); console.log(entries);
+    this.setState({entries, currentWord: input, status: 'found'});
   }
 
   updateMode(mode) {
@@ -76,9 +110,7 @@ class App extends Component {
           handleInput={this.handleInput}
           currentMode={this.state.currentMode}/>
 
-        <DisplayDefinition
-          definition={this.state.definition}
-          examples={this.state.examples}/>
+        <DisplayDefinition entries={this.state.entries}/>
 
       </div>
     );

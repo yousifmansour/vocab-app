@@ -1,37 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import './DisplayDefinition.css';
 
+import React from 'react';
+import PropTypes from 'prop-types';
+import DisplayEntry from './DisplayEntry.js';
+
 class DisplayDefinition extends React.Component {
+
   static propTypes = {
-    definition: PropTypes.string.isRequired,
-    examples: PropTypes.arrayOf(PropTypes.object)
+    entries: PropTypes
+      .arrayOf(PropTypes.object)
+      .isRequired
   }
+
   render() {
-    let examples = '';
-    if (this.props.examples) 
-      examples = this.props.examples.map((ex, i) => {
-        return (
-          <div key={i}>
-            <span>
-              {ex.text}.
-            </span>
-            <br/>
-          </div>
-        );
-      });
+
+    let entries = [];
+    if (this.props.entries[0]) {
+
+      // create a component for display an entry
+      entries = this
+        .props
+        .entries
+        .map((entry, i) => {
+          const functionalLabel = entry.fl;
+          const sensesArray = entry.sensesArray;
+          return <DisplayEntry
+            key={i}
+            id={i + 1}
+            functionalLabel={functionalLabel}
+            sensesArray={sensesArray}/>;
+        });
+    }
+
     return (
       <div className="definition-container">
-        {this.props.definition
-          ? <div>
-              <h3>
-                <strong>{this.props.definition}.</strong>
-              </h3>
-              <h4>Examples:</h4>
-              {examples}
-            </div>
-          : null}
+        {entries}
       </div>
     );
   }
