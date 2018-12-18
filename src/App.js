@@ -29,7 +29,7 @@ class App extends Component {
       this.setState({
         entries: [],
         currentWord: ''
-      }, () => {
+      }, () => {        
         let url = 'https://dictionaryapi.com/api/v3/references/collegiate/json/<WORD>?key=51ea8a10-' +
             '9f05-41e9-9adb-fff0f8785ac7';
         fetch(url.replace('<WORD>', input)).then((data) => data.json()).then((data) => {
@@ -45,8 +45,7 @@ class App extends Component {
   }
 
   parseResult(data, input) {
-    // console.clear(); console.log(data);
-
+  
     let entries = [];
     let sensesArray;
     let senses;
@@ -83,9 +82,7 @@ class App extends Component {
         });
 
       entries.push({sensesArray, fl});
-    });
-
-    // console.log('in state'); console.log(entries);
+    });    
     this.setState({entries, currentWord: input, status: 'found'});
   }
 
@@ -111,7 +108,6 @@ class App extends Component {
           currentMode={this.state.currentMode}/>
 
         <DisplayDefinition entries={this.state.entries}/>
-
       </div>
     );
   }

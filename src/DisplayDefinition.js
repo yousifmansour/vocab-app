@@ -16,7 +16,6 @@ class DisplayDefinition extends React.Component {
 
     let entries = [];
     if (this.props.entries[0]) {
-
       // create a component for display an entry
       entries = this
         .props
@@ -26,11 +25,13 @@ class DisplayDefinition extends React.Component {
           const sensesArray = entry.sensesArray;
           return <DisplayEntry
             key={i}
-            id={i + 1}
+            id={i + 1/* like 3)verb */}
             functionalLabel={functionalLabel}
             sensesArray={sensesArray}/>;
         });
     }
+
+    for (let i = 0; i < entries.length; i++) {}
 
     return (
       <div className="definition-container">

@@ -19,12 +19,13 @@ class RandomWord extends React.Component {
 
   render() {
     const word = this.props.word;
+
+    // this is the loading animation
     const loader = <div className="loader loader-2">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
-
     </div>;
     return (
 
@@ -38,7 +39,7 @@ class RandomWord extends React.Component {
                 onClick={(e) => {
                 e.preventDefault();
                 this.getNewWord();
-              }}>New Word</button>
+              }}>Get Random Word</button>
             </div>
           : loader}
 

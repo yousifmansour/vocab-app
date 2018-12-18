@@ -18,17 +18,18 @@ class DisplayEntry extends React.Component {
 
   render() {
     let elements = [];
+    let counter = 1; // counting # of defintions
     if (this.props.sensesArray) {
-
       this
         .props
         .sensesArray
         .forEach((element) => {
-          element.forEach((def) => {
-            if (def.text !== '') 
-              elements.push(<Definition key={elements.length} value={def.text}/>);
-            else if (def.vis !== '') 
-              elements.push(<Example key={elements.length} value={def.vis}/>);
+          element.forEach((def, i) => {
+            if (def.text !== '') {
+              elements.push(<Definition key={i} id={counter} value={def.text}/>);
+              counter++;
+            } else if (def.vis !== '') 
+              elements.push(<Example key={i} value={def.vis}/>);
             }
           );
         });
