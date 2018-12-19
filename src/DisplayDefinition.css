@@ -8,6 +8,8 @@
     min-height: 45vh;
     width: 100%;
     border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    /* letter-spacing: 2px; */
 }
 
 .definition-container * {

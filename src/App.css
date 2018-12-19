@@ -11,6 +11,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .App {
@@ -20,6 +21,7 @@ body {
 /* Global Element Styles */
 
 button {
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     border: none;
     background-color: #ffffff;
@@ -30,17 +32,14 @@ button {
     color: #0074D9;
     cursor: pointer;
 }
-
 button:hover {
     background-color: #0074D9;
     color: #FFFFFF;
     transition-duration: 0.15s;
 }
-
 button:active {
     transform: translateY(5px);
 }
-
 @keyframes fade-in {
     0% {
         opacity: 0.25;
@@ -49,7 +48,6 @@ button:active {
         opacity: 1;
     }
 }
-
 @keyframes come-up {
     0% {
         transform: translateY(20px);
@@ -58,7 +56,6 @@ button:active {
         transform: translateY(0px);
     }
 }
-
 @keyframes come-from-left {
     0% {
         transform: translateX(-50px);
@@ -67,7 +64,6 @@ button:active {
         transform: translate(0px);
     }
 }
-
 @keyframes come-from-right {
     0% {
         transform: translateX(50px);
@@ -76,7 +72,6 @@ button:active {
         transform: translate(0px);
     }
 }
-
 @keyframes filter-grayscale {
     0% {
         filter: grayscale(200);

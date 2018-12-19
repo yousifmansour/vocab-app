@@ -21,6 +21,7 @@
 }
 
 .input-container input {
+    font-family: 'Open Sans', sans-serif;
     width: 75vw;
     height: 7vh;
     color: #0074D9;

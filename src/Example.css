@@ -1,6 +1,9 @@
-.example-container{
+.example-container {
     margin-left: 15px;
     margin-right: 15px;
     color: white;
     font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
+
+    /* letter-spacing: 1px; */
 }
