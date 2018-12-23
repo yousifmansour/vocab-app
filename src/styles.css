@@ -9,11 +9,13 @@
 }
 
 .loader-2 div{
-    border-radius: 10px;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
 }
 
 .loader-1{
-    border-radius: 100%;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
     -webkit-animation: 3s loader-1-rotate linear infinite;
             animation: 3s loader-1-rotate linear infinite;
 }
@@ -124,10 +126,12 @@
 .loader-2{
     display:-webkit-box;
     display:-ms-flexbox;
+    display:-webkit-flex;
     display:flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
+            -webkit-flex-direction: row;
             flex-direction: row;
 }
 
@@ -136,6 +140,7 @@
     margin: 4px;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
+            -webkit-flex-grow: 1;
             flex-grow: 1; 
 }
 
@@ -144,17 +149,20 @@
             animation: 3s loader-2-item-fade linear infinite;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
+            -webkit-flex-grow: 1;
             flex-grow: 1;
 }
 
 @-webkit-keyframes loader-2-item-fade {
     60%{
         -webkit-box-flex:15;
+                -webkit-flex-grow:15;
                 flex-grow:15;
     }
 
     100%{
         -webkit-box-flex: 1;
+                -webkit-flex-grow: 1;
                 flex-grow: 1;
     }
 }
@@ -163,12 +171,14 @@
     60%{
         -webkit-box-flex:15;
             -ms-flex-positive:15;
+                -webkit-flex-grow:15;
                 flex-grow:15;
     }
 
     100%{
         -webkit-box-flex: 1;
             -ms-flex-positive: 1;
+                -webkit-flex-grow: 1;
                 flex-grow: 1;
     }
 }
@@ -179,17 +189,21 @@
 .loader-3{
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
+            -webkit-flex-direction: column;
             flex-direction: column;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; 
+        -webkit-flex-wrap: wrap;
+            flex-wrap: wrap; 
     background-color: white;
     -webkit-animation: loader-3-zoom 3s linear infinite;
             animation: loader-3-zoom 3s linear infinite;
-    border-radius: 10%;
+    -webkit-border-radius: 10%;
+            border-radius: 10%;
     padding: 2px;
 }
 
@@ -197,38 +211,47 @@
     border: 1px solid rgb(175, 131, 64);
     position: relative;
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+        -webkit-flex-basis: 50%;
+            flex-basis: 50%;
     margin: 2%;
     background-color: blanchedalmond;
-    border-radius: 10%;  
+    -webkit-border-radius: 10%;
+            border-radius: 10%;  
 }
 
 .loader-3 .loader-3-first-row{
     -webkit-box-flex: 1;
         -ms-flex: 1 1 10%;
+            -webkit-flex: 1 1 10%;
             flex: 1 1 10%;
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
 
 .loader-3 .loader-3-center-row{
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
             justify-content: center;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 10%;
+            -webkit-flex: 1 1 10%;
             flex: 1 1 10%
 }
 .loader-3 .loader-3-second-row{
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 10%;
+            -webkit-flex: 1 1 10%;
             flex: 1 1 10%;
 }
 
@@ -285,7 +308,8 @@
         -webkit-transform: translateY(2px);
                 transform: translateY(2px);
         background-color: burlywood;
-        flex-basis: 100%;
+        -webkit-flex-basis: 100%;
+                flex-basis: 100%;
     }
 }
 
@@ -297,7 +321,8 @@
                 transform: translateY(2px);
         background-color: burlywood;
         -ms-flex-preferred-size: 100%;
-            flex-basis: 100%;
+            -webkit-flex-basis: 100%;
+                flex-basis: 100%;
     }
 }
 
@@ -323,6 +348,7 @@
 .loader-4{
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     /* align-items: center; */
     height: 2%;
@@ -331,6 +357,7 @@
 .loader-4-line{
     -webkit-box-flex: 0;
         -ms-flex: 0 0 10%;
+            -webkit-flex: 0 0 10%;
             flex: 0 0 10%;
     background-color: aqua;
     -webkit-animation: loader-4-length 3s linear infinite;
@@ -343,7 +370,8 @@
         opacity: 0.5;
     }
     20%{
-        flex-basis: 100%; 
+        -webkit-flex-basis: 100%;
+                flex-basis: 100%; 
         opacity: 1;
     }
     40%{
@@ -356,7 +384,8 @@
         opacity: 0.5;
     }
     100%{
-        flex-basis: 100%;   
+        -webkit-flex-basis: 100%;
+                flex-basis: 100%;   
         opacity:1;
       
     }
@@ -368,7 +397,8 @@
     }
     20%{
         -ms-flex-preferred-size: 100%;
-            flex-basis: 100%; 
+            -webkit-flex-basis: 100%;
+                flex-basis: 100%; 
         opacity: 1;
     }
     40%{
@@ -382,7 +412,8 @@
     }
     100%{
         -ms-flex-preferred-size: 100%;
-            flex-basis: 100%;   
+            -webkit-flex-basis: 100%;
+                flex-basis: 100%;   
         opacity:1;
       
     }
@@ -396,22 +427,27 @@
     /* background-color: yellow;  */
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
+            -webkit-justify-content: center;
             justify-content: center; 
 }
 
 .loader-5 div{
     -webkit-box-flex:1;
         -ms-flex-positive:1;
+            -webkit-flex-grow:1;
             flex-grow:1;
     /* flex-basis: 50%; */
     background-color: black;
     margin: 4px; 
-    border-radius: 10%;
+    -webkit-border-radius: 10%; 
+            border-radius: 10%;
     -webkit-animation: loader-5-change-color 3s linear infinite alternate;
             animation: loader-5-change-color 3s linear infinite alternate;
 }
